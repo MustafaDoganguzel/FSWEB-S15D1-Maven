@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Grocery {
-    public static ArrayList groceryList = new ArrayList<>();
+    public static ArrayList<String> groceryList = new ArrayList<>();
 
     public void startGrocery(){
        Scanner scanner = new Scanner(System.in);
@@ -16,8 +16,13 @@ public class Grocery {
           return;
        } else if (deger == 1) {
            System.out.println("Eklenmesini istediğiniz elemanları giriniz.");
+           String itemsToAdd = scanner.nextLine();
+           addItems(itemsToAdd);
+
        } else if (deger == 2){
            System.out.println("Cıkarılmasını istediğiniz elemanları giriniz.");
+           String itemToRemove = scanner.nextLine();
+           addItems(itemToRemove);
        }
 
     }
@@ -46,7 +51,7 @@ public class Grocery {
     }
     public static void printSorted(){
         Collections.sort(groceryList);
-        for(Object item : groceryList){
+        for(String item : groceryList){
             System.out.println(item);
         }
     }
