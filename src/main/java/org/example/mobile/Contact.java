@@ -28,4 +28,13 @@ public class Contact {
     public static Contact createContact(String name, String phoneNumber){
         return new Contact(name, phoneNumber);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+    if(((Contact)obj).name.equals(name) && ((Contact)obj).phoneNumber.equals(phoneNumber)){
+     return true;
+    }
+    return  false;
+    }
 }
