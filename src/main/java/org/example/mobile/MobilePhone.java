@@ -35,15 +35,17 @@ public class MobilePhone {
             return false;
         }
     }
+    public int findContact(String name){
+    for(Contact str : myContacts){
+     if(str.getName().equals(name)){
+        return myContacts.indexOf(str);
+      }
+        }
+        return -1;
+    }
     public int findContact(Contact contact){
         if (myContacts.contains(contact)){
             int index = myContacts.indexOf(contact);
-            return index;
-        }else return -1;
-    }
-    public int findContact(String name){
-        if (myContacts.contains(name)){
-            int index = myContacts.indexOf(name);
             return index;
         }else return -1;
     }
